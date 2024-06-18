@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="script.js" defer></script>
+
+    <style>
+        #op {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #button-container {
+            display: flex;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid" id="op">
+            <a href="index.html"><h1>INICIO</h1></a>
+            <div id="button-container">
+                <a href="login.html" class="btn btn-info">Iniciar</a>
+                <a href="register.html" class="btn btn-info">Registrar</a>
+            </div>
+        </div>
+    </nav>
+<br><br>
+    <h2>Registro</h2>
+    <form id="registerForm" action="register.php" method="post">
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" class="w-75" id="nombre" name="nombre" required><br>
+        <label for="Ap">Apellido Paterno:</label><br>
+        <input type="text" class="w-75" id="Ap" name="Ap" required><br>
+        <label for="Am">Apellido Materno:</label><br>
+        <input type="text" class="w-75" id="Am" name="Am" required><br>
+        <label for="telefono">Teléfono:</label><br>
+        <input type="text" class="w-75" id="telefono" name="telefono" required><br>
+        <label for="correo">Correo Electrónico:</label><br>
+        <input type="email" class="w-75" id="correo" name="correo" required><br>
+        <label for="Con">Contraseña:</label><br>
+        <input type="password" class="w-75" id="Con" name="Con" required><br><br>
+        <button type="submit" class="btn btn-success">Registrarse</button>
+    </form>
+    <script src="bootstrap.min.js"></script>
+</body>
+</html>
