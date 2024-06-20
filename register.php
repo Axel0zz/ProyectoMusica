@@ -1,5 +1,8 @@
 <?php
 include 'database.php';
+header('Content-Type: application/json');
+
+$response = array();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nombre = $_POST['nombre'];
@@ -14,12 +17,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bind_param("ssssss", $nombre, $Ap, $Am, $telefono, $correo, $Con);
 
     if ($stmt->execute()) {
-        echo "Registro exitoso!";
+        $response['success'] = true;
+        $response['message'] = "Registro exitoso!";
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        $response['success'] = false;
+        $response['message'] = "Error: " . $stmt->error;
     }
 
     $stmt->close();
     $conn->close();
+} else {
+    $response['success'] = false;
+    $response['message'] = "Método de solicitud no válido.";
 }
+
+echo json_encode($response);
 ?>

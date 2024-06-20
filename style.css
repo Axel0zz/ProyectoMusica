@@ -19,3 +19,15 @@ input {
 #id{
     align-items: right;
 }
+/* Alinear el enlace al perfil a la derecha */
+.navbar-nav {
+    margin-left: auto; /* Mueve la lista de navegación a la derecha */
+}
+
+.navbar-brand,
+.navbar-nav {
+    margin-right: 10px; /* Espacio entre la marca del Navbar y la lista de navegación */
+}
+
+
+
